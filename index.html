@@ -505,6 +505,25 @@ header {
             gap: 9px;
         }
 
+        .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-logo {
+    display: block;
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin: 0 0 20px 0;
+}
+
+.footer-brand h2 {
+    margin-top: 0;
+}
+
         .copyright {
             border-top: 1px solid #ffffff20;
             padding-top: 20px;
@@ -592,6 +611,53 @@ header {
         transition: none;
     }
 }
+
+
+/* BEST WISHES FLOATING CARD */
+.best-wishes-section {
+    display: flex;
+    justify-content: center;
+    padding: 35px 20px 55px;
+    position: relative;
+    z-index: 2;
+}
+
+.best-wishes-card {
+    width: min(400px, 100vw);
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid rgba(214, 173, 87, 0.65);
+    border-radius: 16px;
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.12),
+        0 0 18px rgba(214, 173, 87, 0.12);
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.best-wishes-card:hover {
+    transform: translateY(-7px) rotate(0deg);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.18);
+}
+
+.best-wishes-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 9px;
+}
+
+@media (max-width: 600px) {
+    .best-wishes-section {
+        padding: 25px 16px 40px;
+    }
+
+    .best-wishes-card {
+        width: min(240px, 85vw);
+    }
+}
+
     </style>
 </head>
 
@@ -602,7 +668,7 @@ header {
     <header>
       
 <div class="logo">
-    <img src="logo.jpg" alt="Organization Logo" class="logo-img">
+    <img src="images/logo.jpg" alt="Organization Logo" class="logo-img">
     <span></span>
 </div>
 
@@ -869,6 +935,19 @@ header {
 
     </section>
 
+    
+<!-- BEST WISHES FLOATING CARD -->
+<section class="best-wishes-section">
+    <div class="best-wishes-card">
+        <img
+            src="images/vyaparpic2.jpeg"
+            alt="Best wishes"
+            class="best-wishes-image"
+        >
+    </div>
+</section>
+
+
 
     <!-- FOOTER -->
 
@@ -877,20 +956,22 @@ header {
         <div class="footer-content">
 
             <div class="footer-brand">
-                <h3>YOUR ORGANIZATION</h3>
+    <img src="images/logo.jpg" alt="JAYTRADE TIMES Logo" class="footer-logo">
 
-                <p>
-                    Celebrating leadership, innovation and business
-                    excellence. Recognising the people shaping tomorrow.
-                </p>
-            </div>
+    <h2>JAYTRADETIMES</h2>
+
+    <p>
+        Celebrating leadership, innovation and business excellence.
+        Recognising the people shaping tomorrow.
+    </p>
+</div>
 
             <div>
                 <h4>Contact Us</h4>
 
                 <div class="footer-links">
                     <a href="mailto:info@yourorganization.com">
-                        ✉ info@yourorganization.com
+                        ✉ communication@jaytrade.in
                     </a>
 
                     <a href="tel:+910000000000">
