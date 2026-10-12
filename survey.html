@@ -1,0 +1,459 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Excellence Awards | Nomination Form</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f5f9;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #132b49;
+            color: white;
+            padding: 22px 8%;
+            text-align: center;
+        }
+
+        header h2 {
+            color: #f3c969;
+            font-size: 26px;
+        }
+
+        header p {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 35px;
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 5px 25px #0000000d;
+        }
+
+    
+header {
+    background: white;
+    height: 100px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--navy);
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transform: translateX(-85px);
+}
+
+.logo-img {
+    width: 300px;
+    height: 600px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+}
+
+
+        .intro {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .intro h1 {
+            color: #173f75;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .intro p {
+            color: #666;
+        }
+
+        .section-title {
+            color: #173f75;
+            font-size: 19px;
+            margin: 28px 0 18px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f0c65e;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 7px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d5dbe5;
+            border-radius: 7px;
+            font-size: 15px;
+            font-family: inherit;
+            background: white;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #2876c7;
+            box-shadow: 0 0 0 3px #2876c71a;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .required {
+            color: #d93025;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 25px 0;
+            font-size: 14px;
+        }
+
+        .checkbox-group input {
+            width: auto;
+            margin-top: 5px;
+        }
+
+        .checkbox-group label {
+            font-weight: normal;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #173f75;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #2876c7;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 22px;
+            color: #173f75;
+            text-decoration: none;
+        }
+
+        .note {
+            background: #fff8e6;
+            border-left: 4px solid #f0c65e;
+            padding: 13px;
+            font-size: 13px;
+            color: #665322;
+            margin-top: 20px;
+        }
+
+        footer {
+            background: #132b49;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px 12px;
+                padding: 22px 18px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .intro h1 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    
+    <p>Business Excellence Awards 2026</p>
+    <div class="logo">
+    <img src="logo.jpg" alt="Organization Logo" class="logo-img">
+    <span></span>
+</div>
+</header>
+
+<main class="container">
+
+    <div class="intro">
+        <h1>Nomination Form</h1>
+        <p>
+            Recognising visionary leaders, outstanding entrepreneurs,
+            and exceptional business achievements.
+        </p>
+    </div>
+
+    <form id="nominationForm">
+
+        <h3 class="section-title">1. Nominee Information</h3>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="nomineeName">
+                    Full Name <span class="required">*</span>
+                </label>
+                <input type="text" id="nomineeName" name="nomineeName"
+                    placeholder="Enter nominee's full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="designation">
+                    Designation <span class="required">*</span>
+                </label>
+                <input type="text" id="designation" name="designation"
+                    placeholder="e.g. Founder, Managing Director" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="company">
+                    Company / Business Name <span class="required">*</span>
+                </label>
+                <input type="text" id="company" name="company"
+                    placeholder="Enter business name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="industry">
+                    Industry <span class="required">*</span>
+                </label>
+                <select id="industry" name="industry" required>
+                    <option value="">Select industry</option>
+                    <option>Technology / IT</option>
+                    <option>Manufacturing</option>
+                    <option>Retail / E-commerce</option>
+                    <option>Healthcare</option>
+                    <option>Education</option>
+                    <option>Real Estate / Construction</option>
+                    <option>Finance / Banking</option>
+                    <option>Hospitality / Tourism</option>
+                    <option>Food / Agriculture</option>
+                    <option>Media / Entertainment</option>
+                    <option>Professional Services</option>
+                    <option>Other</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="location">
+                    Business Location <span class="required">*</span>
+                </label>
+                <input type="text" id="location" name="location"
+                    placeholder="City, State" required>
+            </div>
+
+            <div class="form-group">
+                <label for="experience">Years in Business</label>
+                <select id="experience" name="experience">
+                    <option value="">Select experience</option>
+                    <option>Less than 3 years</option>
+                    <option>3–5 years</option>
+                    <option>6–10 years</option>
+                    <option>11–20 years</option>
+                    <option>More than 20 years</option>
+                </select>
+            </div>
+        </div>
+
+        <h3 class="section-title">2. Award Category</h3>
+
+        <div class="form-group">
+            <label for="category">
+                Select Award Category <span class="required">*</span>
+            </label>
+
+            <select id="category" name="category" required>
+                <option value="">Choose an award category</option>
+                <option>Entrepreneur of the Year</option>
+                <option>Business Leader of the Year</option>
+                <option>Emerging Entrepreneur Award</option>
+                <option>Women Entrepreneur of the Year</option>
+                <option>Excellence in Innovation</option>
+                <option>Small Business Excellence Award</option>
+                <option>Excellence in Customer Service</option>
+                <option>Outstanding Business Growth</option>
+                <option>Lifetime Achievement Award</option>
+                <option>Social Impact / CSR Excellence</option>
+                <option>Industry Excellence Award</option>
+                <option>Other</option>
+            </select>
+        </div>
+
+        <h3 class="section-title">3. Business Achievements</h3>
+
+        <div class="form-group">
+            <label for="achievements">
+                Key Achievements <span class="required">*</span>
+            </label>
+            <textarea id="achievements" name="achievements"
+                placeholder="Describe the nominee's major business achievements..."
+                required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="innovation">Innovation and Business Impact</label>
+            <textarea id="innovation" name="innovation"
+                placeholder="What makes this entrepreneur or business stand out?"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="reason">
+                Why does this nominee deserve the award?
+                <span class="required">*</span>
+            </label>
+            <textarea id="reason" name="reason"
+                placeholder="Explain why this nominee should be recognised..."
+                required></textarea>
+        </div>
+
+        <h3 class="section-title">4. Nominator Information</h3>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="nominatorName">
+                    Your Full Name <span class="required">*</span>
+                </label>
+                <input type="text" id="nominatorName" name="nominatorName"
+                    placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="relationship">
+                    Relationship to Nominee <span class="required">*</span>
+                </label>
+                <select id="relationship" name="relationship" required>
+                    <option value="">Select relationship</option>
+                    <option>Self-nomination</option>
+                    <option>Colleague</option>
+                    <option>Business Partner</option>
+                    <option>Employee</option>
+                    <option>Client / Customer</option>
+                    <option>Friend / Family</option>
+                    <option>Industry Associate</option>
+                    <option>Other</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="email">
+                    Email Address <span class="required">*</span>
+                </label>
+                <input type="email" id="email" name="email"
+                    placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">
+                    Contact Number <span class="required">*</span>
+                </label>
+                <input type="tel" id="phone" name="phone"
+                    placeholder="Enter contact number" required>
+            </div>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">
+                I confirm that the information provided is accurate to the
+                best of my knowledge and that I have permission to submit
+                the nominee's information where required.
+                <span class="required">*</span>
+            </label>
+        </div>
+
+        <button type="submit" class="submit-btn">
+            Submit Nomination
+        </button>
+
+        <div class="note">
+            Please ensure all required fields are completed before submitting.
+        </div>
+
+    </form>
+
+    <a href="index.html" class="back-link">← Back to Program Website</a>
+
+</main>
+
+<footer>
+    &copy; 2026 YOUR ORGANIZATION. All rights reserved.
+</footer>
+
+<script>
+    document.getElementById("nominationForm").addEventListener("submit",
+        function(event) {
+            event.preventDefault();
+
+            alert(
+                "Your form is ready, but submission is not connected yet. " +
+                "Please connect a backend or form service to receive nominations."
+            );
+        }
+    );
+</script>
+
+</body>
+</html>
