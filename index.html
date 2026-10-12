@@ -1,579 +1,312 @@
 
+
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 
     <title>VYAPAR VYAVASAYI AWARDS 2026</title>
 
+
+
     <style>
+
         * {
+
             margin: 0;
+
             padding: 0;
+
             box-sizing: border-box;
+
         }
+
+
 
         :root {
+
             --navy: #142b49;
+
             --blue: #214d7d;
+
             --gold: #d6ad57;
+
             --light: #f5f6f8;
+
             --text: #252b34;
+
             --muted: #697586;
+
         }
+
+
 
         html {
+
             scroll-behavior: smooth;
+
         }
 
+
+
         body {
+
             font-family: Arial, Helvetica, sans-serif;
+
             background: var(--light);
+
             color: var(--text);
+
             line-height: 1.7;
+
         }
+
+
 
         /* HEADER */
 
-        
+
+
+
+
 header {
+
     background: white;
+
     height: 85px;
+
     padding: 0 8%;
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     border-bottom: 1px solid #e8e8e8;
+
 }
+
+
 
 .logo {
+
     display: flex;
+
     align-items: center;
+
     gap: 12px;
+
     color: var(--navy);
+
     font-size: 22px;
+
     font-weight: 800;
+
     letter-spacing: 1px;
+
 }
 
+
+
 .logo-img {
+
     width: 300px;  /* Increase logo width */
+
     height: 600px; /* Increase logo height */
+
     object-fit: contain;
+
     display: block;
+
     flex-shrink: 0;
+
 }
+
+
+
 
 
         .header-tag {
+
             color: var(--muted);
+
             font-size: 13px;
+
         }
+
+
 
         /* MAIN HEADING */
 
+
+
         .hero-heading {
+
             text-align: center;
+
             padding: 55px 20px 35px;
+
         }
+
+
 
         .eyebrow {
+
             color: #997326;
+
             font-weight: bold;
+
             font-size: 12px;
+
             letter-spacing: 4px;
+
             text-transform: uppercase;
+
         }
+
+
 
         .hero-heading h1 {
+
             font-size: clamp(32px, 5vw, 56px);
+
             line-height: 1.2;
+
             color: var(--navy);
+
             margin: 15px 0;
+
         }
+
+
 
         .hero-heading p {
+
             max-width: 650px;
+
             margin: auto;
+
             color: var(--muted);
+
             font-size: 17px;
+
         }
 
-        /* SLIDING BANNER */
 
-        /* SLIDING BANNER */
+
+        /* THREE-PANEL SLIDING BANNER */
 .slider {
     width: 92%;
-    max-width: 1000px;
-    aspect-ratio: 16 / 7;
-    height: auto;
+    max-width: 1250px;
     margin: 25px auto 0;
     position: relative;
-    overflow: hidden;
-    border-radius: 18px;
-    background: linear-gradient(135deg, #142b49, #214d7d);
-    border: 2px solid #d6ad57;
-    box-shadow: 0 15px 35px rgba(20, 43, 73, 0.2);
+    isolation: isolate;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    overflow: visible;
 }
 
-.slides {
-    display: flex;
-    height: 100%;
-    transition: transform 0.7s ease-in-out;
+.banner-panels {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 18px;
+    min-height: 390px;
 }
 
-.slide {
-    min-width: 100%;
-    height: 100%;
+.banner-panel {
+    min-width: 0;
+    height: 330px;
     position: relative;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #142b49, #214d7d);
+    justify-content: center;
     overflow: hidden;
+    background: #ffffff;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 12px 28px rgba(20, 43, 73, 0.12);
+    transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-/* Images are displayed as images, not backgrounds */
-.slide img {
+.banner-panel.is-center {
+    height: 390px;
+    box-shadow: 0 15px 35px rgba(20, 43, 73, 0.16);
+}
+
+.banner-panel.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.banner-panel img {
     display: block;
-    width: auto;
-    height: 90%;
-    max-width: 42%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     position: relative;
     z-index: 1;
 }
 
-/* First image — left */
-.slide:nth-child(1) img {
-    margin-left: 5%;
-    margin-right: auto;
-}
-
-/* Second image — centre */
-.slide:nth-child(2) img {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Third image — right */
-.slide:nth-child(3) img {
-    margin-left: auto;
-    margin-right: 5%;
-}
-
-/* Navigation arrows */
 .slider-arrow {
     position: absolute;
-    z-index: 3;
+    z-index: 5;
     top: 50%;
     transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    border: 1px solid #142b49;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #d8dee8;
     border-radius: 50%;
-    background: white;
+    background: #ffffff;
     color: #142b49;
-    font-size: 22px;
+    font-size: 23px;
     cursor: pointer;
+    box-shadow: 0 4px 14px rgba(20, 43, 73, 0.12);
+    transition: background 0.25s ease, color 0.25s ease;
 }
 
-.prev {
-    left: 12px;
+.slider-arrow:hover {
+    background: var(--navy);
+    color: #ffffff;
 }
 
-.next {
-    right: 12px;
-}
+.prev { left: -18px; }
+.next { right: -18px; }
 
-/* Navigation dots */
 .slider-dots {
-    position: absolute;
-    bottom: 12px;
-    left: 0;
-    right: 0;
+    position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 10px;
-    z-index: 3;
+    margin-top: 18px;
+    z-index: 5;
 }
 
 .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
+    width: 9px;
+    height: 9px;
+    border-radius: 20px;
     background: #aab1bc;
     border: none;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .dot.active {
-    width: 25px;
-    border-radius: 10px;
+    width: 28px;
     background: var(--gold);
 }
-      
 
-        .slider-arrow {
-            position: absolute;
-            z-index: 2;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 45px;
-            height: 45px;
-            border: 1px solid #ffffff70;
-            border-radius: 50%;
-            background: #ffffff20;
-            color: white;
-            font-size: 23px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .slider-arrow:hover {
-            background: var(--gold);
-            color: var(--navy);
-        }
-
-        .prev {
-            left: 20px;
-        }
-
-        .next {
-            right: 20px;
-        }
-
-        .slider-dots {
-            position: absolute;
-            bottom: 22px;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            z-index: 2;
-        }
-
-        .dot {
-            width: 9px;
-            height: 9px;
-            border-radius: 20px;
-            background: #ffffff80;
-            border: none;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .dot.active {
-            width: 28px;
-            background: var(--gold);
-        }
-
-        /* COMMON SECTIONS */
-
-        .section {
-            max-width: 1150px;
-            width: 88%;
-            margin: 100px auto;
-        }
-
-        .section-label {
-            color: #997326;
-            font-size: 12px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .section h2 {
-            font-size: clamp(28px, 3.5vw, 40px);
-            color: var(--navy);
-            line-height: 1.3;
-            margin: 12px 0 22px;
-        }
-
-        .section p {
-            color: var(--muted);
-            font-size: 16px;
-        }
-
-        /* PROGRAM DETAILS */
-
-        .program-intro {
-            max-width: 800px;
-            text-align: center;
-        }
-
-        .program-intro p {
-            margin: 0 auto;
-        }
-
-        .program-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin-top: 45px;
-        }
-
-        .info-card {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            border: 1px solid #e9ebef;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .info-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 15px 35px #142b4912;
-        }
-
-        .info-icon {
-            width: 52px;
-            height: 52px;
-            display: grid;
-            place-items: center;
-            border-radius: 12px;
-            background: #f9f1df;
-            color: #997326;
-            font-size: 25px;
-            margin-bottom: 20px;
-        }
-
-        .info-card h3 {
-            color: var(--navy);
-            margin-bottom: 10px;
-            font-size: 19px;
-        }
-
-        .info-card p {
-            font-size: 14px;
-        }
-
-        /* FLOATING IMAGE CARDS */
-
-        .feature-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 75px;
-        }
-
-        .feature-image {
-            background: white;
-            padding: 12px;
-            border-radius: 18px;
-            box-shadow: 0 25px 55px #142b4920;
-            transform: rotate(-2deg);
-            transition: transform 0.4s, box-shadow 0.4s;
-        }
-
-        .feature-image:hover {
-            transform: rotate(0deg) translateY(-7px);
-            box-shadow: 0 32px 65px #142b4930;
-        }
-
-        .feature-image img {
-            width: 100%;
-            height: 380px;
-            object-fit: cover;
-            display: block;
-            border-radius: 11px;
-        }
-
-        .image-caption {
-            padding: 15px 8px 7px;
-            color: var(--navy);
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .feature-text h2 {
-            margin-bottom: 20px;
-        }
-
-        .feature-text p {
-            margin-bottom: 16px;
-        }
-
-        .gold-line {
-            width: 65px;
-            height: 3px;
-            background: var(--gold);
-            margin: 22px 0;
-        }
-
-        /* SECOND IMAGE SECTION */
-
-        .second-feature {
-            background: #eaeef3;
-            padding: 65px 6%;
-            border-radius: 20px;
-        }
-
-        .second-feature .feature-image {
-            transform: rotate(2deg);
-        }
-
-        .second-feature .feature-image:hover {
-            transform: rotate(0deg) translateY(-7px);
-        }
-
-        /* NOMINATION CTA */
-
-        .nomination {
-            background: var(--navy);
-            text-align: center;
-            padding: 75px 25px;
-            color: white;
-        }
-
-        .nomination .section-label {
-            color: #f1cf80;
-        }
-
-        .nomination h2 {
-            font-size: clamp(30px, 4vw, 44px);
-            margin: 15px 0;
-        }
-
-        .nomination p {
-            color: #d6dce5;
-            max-width: 620px;
-            margin: 0 auto 30px;
-        }
-
-        .nominate-btn {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--navy);
-            text-decoration: none;
-            padding: 16px 38px;
-            border-radius: 6px;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-            transition: 0.3s;
-        }
-
-        .nominate-btn:hover {
-            background: white;
-            transform: translateY(-3px);
-        }
-
-        /* FOOTER */
-
-        footer {
-            background: #0c1c30;
-            color: white;
-            padding: 55px 8% 20px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 45px;
-            padding-bottom: 35px;
-        }
-
-        .footer-brand h3 {
-            color: var(--gold);
-            font-size: 21px;
-            margin-bottom: 12px;
-        }
-
-        footer h4 {
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
-
-        footer p,
-        footer a {
-            color: #b9c3d1;
-            font-size: 14px;
-            text-decoration: none;
-            overflow-wrap: anywhere;
-        }
-
-        footer a:hover {
-            color: var(--gold);
-        }
-
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 9px;
-        }
-
-        .footer-brand {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.footer-logo {
-    display: block;
-    width: 180px;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    margin: 0 0 20px 0;
-}
-
-.footer-brand h2 {
-    margin-top: 0;
-}
-
-        .copyright {
-            border-top: 1px solid #ffffff20;
-            padding-top: 20px;
-            text-align: center;
-            color: #9ca9bb;
-            font-size: 12px;
-        }
-
-        .business-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: inherit;
-}
-
-        /* RESPONSIVE DESIGN */
-
-       @media (max-width: 800px) {
-    .slider {
-        width: 94%;
-        aspect-ratio: 4 / 3;
-    }
-
-    .slide img {
-        max-width: 55%;
-    }
-}
-
-@media (max-width: 500px) {
-    .slider {
-        width: 94%;
-        aspect-ratio: 4 / 3;
-    }
-
-    .slide img {
-        max-width: 65%;
-        height: 85%;
-    }
-}
-
-/* ===== PREMIUM GOLD PARTICLE EFFECT ===== */
-
-.slider {
-    isolation: isolate;
-    position: relative;
-    background: linear-gradient(135deg, #142b49, #214d7d);
-}
-
-/* Floating particles layer */
 .particle-canvas {
     position: absolute;
     inset: 0;
@@ -583,475 +316,1517 @@ header {
     pointer-events: none;
 }
 
-/* Keep posters above the particles */
-.slide img {
-    position: relative;
-    z-index: 3;
+@media (max-width: 800px) {
+    .slider { width: 94%; }
+    .banner-panels { grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) minmax(0, 1fr); gap: 10px; min-height: 300px; }
+    .banner-panel { height: 240px; border-radius: 12px; }
+    .banner-panel.is-center { height: 300px; }
+    .prev { left: -10px; }
+    .next { right: -10px; }
 }
+
+@media (max-width: 560px) {
+    .banner-panels { display: block; min-height: 320px; }
+    .banner-panel { display: none; }
+    .banner-panel.is-center { display: flex; width: 100%; height: 320px; }
+    .slider-arrow { width: 38px; height: 38px; }
+    .prev { left: 8px; }
+    .next { right: 8px; }
+}
+
+/* COMMON SECTIONS */
+
+
+
+        .section {
+
+            max-width: 1150px;
+
+            width: 88%;
+
+            margin: 100px auto;
+
+        }
+
+
+
+        .section-label {
+
+            color: #997326;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+        }
+
+
+
+        .section h2 {
+
+            font-size: clamp(28px, 3.5vw, 40px);
+
+            color: var(--navy);
+
+            line-height: 1.3;
+
+            margin: 12px 0 22px;
+
+        }
+
+
+
+        .section p {
+
+            color: var(--muted);
+
+            font-size: 16px;
+
+        }
+
+
+
+        /* PROGRAM DETAILS */
+
+
+
+        .program-intro {
+
+            max-width: 800px;
+
+            text-align: center;
+
+        }
+
+
+
+        .program-intro p {
+
+            margin: 0 auto;
+
+        }
+
+
+
+        .program-cards {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+
+            margin-top: 45px;
+
+        }
+
+
+
+        .info-card {
+
+            background: white;
+
+            border-radius: 12px;
+
+            padding: 30px;
+
+            border: 1px solid #e9ebef;
+
+            transition: transform 0.3s, box-shadow 0.3s;
+
+        }
+
+
+
+        .info-card:hover {
+
+            transform: translateY(-7px);
+
+            box-shadow: 0 15px 35px #142b4912;
+
+        }
+
+
+
+        .info-icon {
+
+            width: 52px;
+
+            height: 52px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 12px;
+
+            background: #f9f1df;
+
+            color: #997326;
+
+            font-size: 25px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        .info-card h3 {
+
+            color: var(--navy);
+
+            margin-bottom: 10px;
+
+            font-size: 19px;
+
+        }
+
+
+
+        .info-card p {
+
+            font-size: 14px;
+
+        }
+
+
+
+        /* FLOATING IMAGE CARDS */
+
+
+
+        .feature-layout {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            align-items: center;
+
+            gap: 75px;
+
+        }
+
+
+
+        .feature-image {
+
+            background: white;
+
+            padding: 12px;
+
+            border-radius: 18px;
+
+            box-shadow: 0 25px 55px #142b4920;
+
+            transform: rotate(-2deg);
+
+            transition: transform 0.4s, box-shadow 0.4s;
+
+        }
+
+
+
+        .feature-image:hover {
+
+            transform: rotate(0deg) translateY(-7px);
+
+            box-shadow: 0 32px 65px #142b4930;
+
+        }
+
+
+
+        .feature-image img {
+
+            width: 100%;
+
+            height: 380px;
+
+            object-fit: cover;
+
+            display: block;
+
+            border-radius: 11px;
+
+        }
+
+
+
+        .image-caption {
+
+            padding: 15px 8px 7px;
+
+            color: var(--navy);
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+        }
+
+
+
+        .feature-text h2 {
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        .feature-text p {
+
+            margin-bottom: 16px;
+
+        }
+
+
+
+        .gold-line {
+
+            width: 65px;
+
+            height: 3px;
+
+            background: var(--gold);
+
+            margin: 22px 0;
+
+        }
+
+
+
+        /* SECOND IMAGE SECTION */
+
+
+
+        .second-feature {
+
+            background: #eaeef3;
+
+            padding: 65px 6%;
+
+            border-radius: 20px;
+
+        }
+
+
+
+        .second-feature .feature-image {
+
+            transform: rotate(2deg);
+
+        }
+
+
+
+        .second-feature .feature-image:hover {
+
+            transform: rotate(0deg) translateY(-7px);
+
+        }
+
+
+
+        /* NOMINATION CTA */
+
+
+
+        .nomination {
+
+            background: var(--navy);
+
+            text-align: center;
+
+            padding: 75px 25px;
+
+            color: white;
+
+        }
+
+
+
+        .nomination .section-label {
+
+            color: #f1cf80;
+
+        }
+
+
+
+        .nomination h2 {
+
+            font-size: clamp(30px, 4vw, 44px);
+
+            margin: 15px 0;
+
+        }
+
+
+
+        .nomination p {
+
+            color: #d6dce5;
+
+            max-width: 620px;
+
+            margin: 0 auto 30px;
+
+        }
+
+
+
+        .nominate-btn {
+
+            display: inline-block;
+
+            background: var(--gold);
+
+            color: var(--navy);
+
+            text-decoration: none;
+
+            padding: 16px 38px;
+
+            border-radius: 6px;
+
+            font-weight: bold;
+
+            letter-spacing: 0.5px;
+
+            transition: 0.3s;
+
+        }
+
+
+
+        .nominate-btn:hover {
+
+            background: white;
+
+            transform: translateY(-3px);
+
+        }
+
+
+
+        /* FOOTER */
+
+
+
+        footer {
+
+            background: #0c1c30;
+
+            color: white;
+
+            padding: 55px 8% 20px;
+
+        }
+
+
+
+        .footer-content {
+
+            display: grid;
+
+            grid-template-columns: 1.5fr 1fr 1fr;
+
+            gap: 45px;
+
+            padding-bottom: 35px;
+
+        }
+
+
+
+        .footer-brand h3 {
+
+            color: var(--gold);
+
+            font-size: 21px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+
+        footer h4 {
+
+            margin-bottom: 15px;
+
+            font-size: 16px;
+
+        }
+
+
+
+        footer p,
+
+        footer a {
+
+            color: #b9c3d1;
+
+            font-size: 14px;
+
+            text-decoration: none;
+
+            overflow-wrap: anywhere;
+
+        }
+
+
+
+        footer a:hover {
+
+            color: var(--gold);
+
+        }
+
+
+
+        .footer-links {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 9px;
+
+        }
+
+
+
+        .footer-brand {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+
+
+.footer-logo {
+
+    display: block;
+
+    width: 180px;
+
+    max-width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+
+    margin: 0 0 20px 0;
+
+}
+
+
+
+.footer-brand h2 {
+
+    margin-top: 0;
+
+}
+
+
+
+        .copyright {
+
+            border-top: 1px solid #ffffff20;
+
+            padding-top: 20px;
+
+            text-align: center;
+
+            color: #9ca9bb;
+
+            font-size: 12px;
+
+        }
+
+
+
+        .business-video {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: inherit;
+
+}
+
+
+
+        /* RESPONSIVE DESIGN */
+
+
+
+       @media (max-width: 800px) {
+
+    .slider {
+
+        width: 94%;
+
+        aspect-ratio: 4 / 3;
+
+    }
+
+
+
+    .slide img {
+
+        max-width: 55%;
+
+    }
+
+}
+
+
+
+@media (max-width: 500px) {
+
+    .slider {
+
+        width: 94%;
+
+        aspect-ratio: 4 / 3;
+
+    }
+
+
+
+    .slide img {
+
+        max-width: 65%;
+
+        height: 85%;
+
+    }
+
+}
+
+
+
+/* ===== PREMIUM GOLD PARTICLE EFFECT ===== */
+
+
+
+.slider {
+
+    isolation: isolate;
+
+    position: relative;
+
+    background: #ffffff;
+
+}
+
+
+
+/* Floating particles layer */
+
+.particle-canvas {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+}
+
+
+
+/* Keep posters above the particles */
+
+.slide img {
+
+    position: relative;
+
+    z-index: 3;
+
+}
+
+
 
 /* Keep navigation controls clickable */
+
 .slider-arrow {
+
     z-index: 4;
+
 }
+
+
 
 .slider-dots {
+
     z-index: 4;
+
 }
+
+
 
 /* A subtle gold glow around the banner */
+
 .slider {
+
     box-shadow:
+
         0 15px 35px rgba(20, 43, 73, 0.2),
+
         0 0 18px rgba(214, 173, 87, 0.12);
+
 }
 
+
+
 /* Respect reduced-motion preferences */
+
 @media (prefers-reduced-motion: reduce) {
+
     .slides {
+
         transition: none;
+
     }
+
 }
+
+
+
 
 
 /* BEST WISHES FLOATING CARD */
+
 .best-wishes-section {
+
     display: flex;
+
     justify-content: center;
+
     padding: 35px 20px 55px;
+
     position: relative;
+
     z-index: 2;
+
 }
+
+
 
 .best-wishes-card {
+
     width: min(400px, 100vw);
+
     padding: 10px;
+
     background: #ffffff;
+
     border: 1px solid rgba(214, 173, 87, 0.65);
+
     border-radius: 16px;
+
     box-shadow:
+
         0 12px 30px rgba(0, 0, 0, 0.12),
+
         0 0 18px rgba(214, 173, 87, 0.12);
+
     transform: rotate(-2deg);
+
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
+
+
 
 .best-wishes-card:hover {
+
     transform: translateY(-7px) rotate(0deg);
+
     box-shadow: 0 18px 38px rgba(0, 0, 0, 0.18);
+
 }
+
+
 
 .best-wishes-image {
+
     display: block;
+
     width: 100%;
+
     height: auto;
+
     object-fit: contain;
+
     border-radius: 9px;
+
 }
+
+
 
 @media (max-width: 600px) {
+
     .best-wishes-section {
+
         padding: 25px 16px 40px;
+
     }
+
+
 
     .best-wishes-card {
+
         width: min(240px, 85vw);
+
     }
+
 }
 
+
+
+.slider {
+
+    background: #ffffff !important;
+
+    background-image: none !important;
+
+    border: none !important;
+
+}
+
+
+
+.slider img {
+
+    background-color: #ffffff;
+
+}
+
+
+
     </style>
+
 </head>
+
+
 
 <body>
 
+
+
     <!-- HEADER / LOGO -->
 
+
+
     <header>
-      
+
+
+
 <div class="logo">
+
     <img src="images/logo.jpg" alt="Organization Logo" class="logo-img">
+
     <span></span>
+
 </div>
 
 
+
+
+
         <div class="header-tag">
+
             Celebrating Business Excellence
+
         </div>
+
     </header>
+
+
+
 
 
     <!-- MAIN HEADING -->
 
+
+
     <section class="hero-heading">
+
         <div class="eyebrow">The Annual Awards</div>
+
+
 
         <h1>JAYTRADE VYAPARI VYAVASAYI<br> MSME Awards 2026</h1>
 
+
+
         <p>
+
             Celebrating Small Businesses. Empowering Entrepreneurs. Building a Stronger Business Community.
+
         </p>
+
     </section>
 
 
+
+
+
     <!-- SLIDING BANNER -->
+
 <section class="slider" aria-label="Program highlights">
-
-    <div class="slides" id="slides">
-
-        <!-- First image: left -->
-        <div class="slide">
-            <img src="images/vyapar pic.jpeg"
-                 alt="MSME Vyapari Vyavasayi Awards">
-        </div>
-
-        <!-- Second image: centre -->
-        <div class="slide">
-            <img src="images/vyaparpic1.jpeg"
-                 alt="Awards celebration">
-        </div>
-
-        <!-- Third image: right -->
-        <div class="slide">
-            <img src="images/vyaparpic3.jpeg"
-                 alt="Business awards">
-        </div>
-
+    <div class="banner-panels" id="bannerPanels">
+        <div class="banner-panel" id="leftPanel"><img src="images/vyapar pic.jpeg" alt="Previous program highlight"></div>
+        <div class="banner-panel is-center" id="centerPanel"><img src="images/vyapar pic.jpeg" alt="MSME Vyapari Vyavasayi Awards"></div>
+        <div class="banner-panel" id="rightPanel"><img src="images/vyaparpic1.jpeg" alt="Next program highlight"></div>
     </div>
-
-    <button class="slider-arrow prev"
-            id="prevBtn"
-            aria-label="Previous banner">&#10094;</button>
-
-    <button class="slider-arrow next"
-            id="nextBtn"
-            aria-label="Next banner">&#10095;</button>
-
+    <button class="slider-arrow prev" id="prevBtn" aria-label="Previous banner">&#10094;</button>
+    <button class="slider-arrow next" id="nextBtn" aria-label="Next banner">&#10095;</button>
     <div class="slider-dots" id="sliderDots"></div>
-
 </section>
+
+
+
 
 
     <!-- PROGRAM DETAILS -->
 
+
+
     <section class="section program-intro">
+
+
 
         <div class="section-label">About the Program</div>
 
+
+
         <h2>Recognising the People Behind Success</h2>
 
+
+
         <p>
+
             The JAYTRADE VYAPARI VYAVASAYI MSME AWARDS is an initiative dedicated to recognizing,
-             appreciating, and uplifting small-scale business owners, traders, entrepreneurs, and Micro, 
+
+             appreciating, and uplifting small-scale business owners, traders, entrepreneurs, and Micro,&#x20;
+
              Small and Medium Enterprises (MSMEs) who form the backbone of our economy.
+
         </p>
 
-        <p>The awards aspire to create a supportive business ecosystem where small-scale entrepreneurs can connect, grow, 
-            learn, and expand their ventures. By recognizing excellence, promoting local businesses, and encouraging sustainable business practices, 
+
+
+        <p>The awards aspire to create a supportive business ecosystem where small-scale entrepreneurs can connect, grow,&#x20;
+
+            learn, and expand their ventures. By recognizing excellence, promoting local businesses, and encouraging sustainable business practices,&#x20;
+
             the initiative seeks to inspire the next generation of entrepreneurs and strengthen the MSME sector.
+
         </p>
+
+
 
         <div class="program-cards">
 
+
+
             <div class="info-card">
+
                 <div class="info-icon">♔</div>
+
                 <h3>Leadership</h3>
+
                 <p>
+
                     Recognising leaders who inspire their teams,
+
                     make bold decisions and create lasting impact.
+
                 </p>
+
             </div>
 
+
+
             <div class="info-card">
+
                 <div class="info-icon">✧</div>
+
                 <h3>Innovation</h3>
+
                 <p>
+
                     Celebrating creative ideas, new approaches
+
                     and businesses that move their industries forward.
+
                 </p>
+
             </div>
 
+
+
             <div class="info-card">
+
                 <div class="info-icon">◇</div>
+
                 <h3>Achievement</h3>
+
                 <p>
+
                     Honouring dedication, business growth
+
                     and contributions to the wider community.
+
                 </p>
+
             </div>
+
+
 
         </div>
+
     </section>
+
+
+
 
 
     <!-- FIRST FLOATING PHOTO CARD -->
 
+
+
     <section class="section">
+
+
 
         <div class="feature-layout">
 
+
+
             <div class="feature-image">
+
                 <img
+
                     src=images/awardpic1.jpeg
+
                     alt="Professional corporate event">
+
                 <div class="image-caption">
+
                     RECOGNITION • EXCELLENCE • ACHIEVEMENT
+
                 </div>
+
             </div>
 
+
+
             <div class="feature-text">
+
                 <div class="section-label">The Vision</div>
+
+
 
                 <h2>A Stage for Outstanding Business Leaders</h2>
 
+
+
                 <div class="gold-line"></div>
 
+
+
                 <p>
-                    Through this initiative, JAYTRADE aims to bring these unsung business achievers into the spotlight, 
-                    celebrate their accomplishments, encourage their entrepreneurial spirit, and provide them 
+
+                    Through this initiative, JAYTRADE aims to bring these unsung business achievers into the spotlight,&#x20;
+
+                    celebrate their accomplishments, encourage their entrepreneurial spirit, and provide them&#x20;
+
                     with a platform to gain greater visibility, credibility, and business opportunities.
 
 
+
+
+
                 </p>
 
+
+
                 <p>
-                    The awards aspire to create a supportive business ecosystem where small-scale entrepreneurs can connect, 
-                    grow, learn, and expand their ventures. By recognizing excellence, promoting local businesses, and encouraging 
+
+                    The awards aspire to create a supportive business ecosystem where small-scale entrepreneurs can connect,&#x20;
+
+                    grow, learn, and expand their ventures. By recognizing excellence, promoting local businesses, and encouraging&#x20;
+
                     sustainable business practices, the initiative seeks to inspire the next generation of entrepreneurs and strengthen the MSME sector.
+
                 </p>
 
+
+
                 <p>
+
                     Join us in recognising the people who make a difference
+
                     through their leadership and entrepreneurial spirit.
+
                 </p>
+
             </div>
 
+
+
         </div>
+
     </section>
+
+
+
 
 
     <!-- ADDITIONAL PROGRAM INFORMATION -->
 
+
+
     <section class="section">
+
+
 
         <div class="section-label">The Awards Process</div>
 
+
+
         <h2>How the Program Works</h2>
 
+
+
         <p>
+
             The nomination process gives individuals an opportunity
+
             to put forward deserving business leaders for recognition.
+
             Each nomination should include the nominee's business
+
             background, key achievements and reasons for consideration.
+
         </p>
+
+
 
         <div class="program-cards">
 
+
+
             <div class="info-card">
+
                 <div class="info-icon">01</div>
+
                 <h3>Submit a Nomination</h3>
+
                 <p>
+
                     Complete the online form with the nominee's
+
                     details and business achievements.
+
                 </p>
+
             </div>
 
+
+
             <div class="info-card">
+
                 <div class="info-icon">02</div>
+
                 <h3>Review and Evaluation</h3>
+
                 <p>
+
                     Nominations can be reviewed against the official
+
                     eligibility requirements and award criteria.
+
                 </p>
+
             </div>
 
+
+
             <div class="info-card">
+
                 <div class="info-icon">03</div>
+
                 <h3>Celebrate Excellence</h3>
+
                 <p>
+
                     Selected award recipients are recognised
+
                     through the awards program.
+
                 </p>
+
             </div>
+
+
 
         </div>
+
     </section>
+
+
+
 
 
     <!-- SECOND FLOATING PHOTO CARD -->
 
+
+
     <section class="section second-feature">
+
+
 
         <div class="feature-layout">
 
+
+
             <div class="feature-text">
+
                 <div class="section-label">Your Participation Matters</div>
+
+
 
                 <h2>Every Great Achievement Deserves Recognition</h2>
 
+
+
                 <div class="gold-line"></div>
 
-                <p>
-                    Do you know a business leader whose work deserves
-                    to be celebrated? Have you built a business through
-                    determination and vision?
-                </p>
+
 
                 <p>
-                    Put forward a deserving candidate and help shine
-                    a light on outstanding entrepreneurial achievements.
-                    Self-nominations may also be submitted where permitted
-                    by the program rules.
+
+                    Do you know a business leader whose work deserves
+
+                    to be celebrated? Have you built a business through
+
+                    determination and vision?
+
                 </p>
+
+
+
+                <p>
+
+                    Put forward a deserving candidate and help shine
+
+                    a light on outstanding entrepreneurial achievements.
+
+                    Self-nominations may also be submitted where permitted
+
+                    by the program rules.
+
+                </p>
+
             </div>
+
+
 
             <div class="feature-image">
+
                 <video class="business-video" autoplay muted loop playsinline>
+
     <source src="images/vyaparawardsvideo.mp4" type="video/mp4">
+
 </video>
+
                 <div class="video-caption">
+
                     CELEBRATING THE SPIRIT OF ENTREPRENEURSHIP
+
                 </div>
+
             </div>
 
+
+
         </div>
+
     </section>
+
+
+
 
 
     <!-- NOMINATION BUTTON -->
 
+
+
     <section class="nomination">
+
+
 
         <div class="section-label">Nominations Are Welcome</div>
 
+
+
         <h2>Know Someone Who Deserves the Spotlight?</h2>
 
+
+
         <p>
+
             Take the first step. Submit a nomination and help us
+
             recognise outstanding business achievements.
+
         </p>
 
+
+
         <a href="survey.html" class="nominate-btn">
+
             NOMINATE NOW &nbsp; →
+
         </a>
+
+
 
     </section>
 
-    
+
+
+
+
 <!-- BEST WISHES FLOATING CARD -->
+
 <section class="best-wishes-section">
+
     <div class="best-wishes-card">
+
         <img
+
             src="images/vyaparpic2.jpeg"
+
             alt="Best wishes"
+
             class="best-wishes-image"
+
         >
+
     </div>
+
 </section>
+
+
+
+
 
 
 
     <!-- FOOTER -->
 
+
+
     <footer>
+
+
 
         <div class="footer-content">
 
+
+
             <div class="footer-brand">
+
     <img src="images/logo.jpg" alt="JAYTRADE TIMES Logo" class="footer-logo">
+
+
 
     <h2>JAYTRADETIMES</h2>
 
+
+
     <p>
+
         Celebrating leadership, innovation and business excellence.
+
         Recognising the people shaping tomorrow.
+
     </p>
+
 </div>
 
+
+
             <div>
+
                 <h4>Contact Us</h4>
 
+
+
                 <div class="footer-links">
+
                     <a href="mailto:info@yourorganization.com">
+
                         ✉ communication@jaytrade.in
+
                     </a>
+
+
 
                     <a href="tel:+910000000000">
+
                         ☎ +91 90480 66144
+
                     </a>
 
+
+
                     <p>⌖ YMCA Rd, Kozhikode, Kerala 673001, India</p>
+
                 </div>
+
             </div>
+
+
 
             <div>
+
                 <h4>Quick Links</h4>
 
+
+
                 <div class="footer-links">
+
                     <a href="index.html">Home</a>
+
                     <a href="#slides">Program Highlights</a>
+
                     <a href="survey.html">Nominate</a>
+
                 </div>
+
             </div>
 
+
+
         </div>
 
+
+
         <div class="copyright">
+
             © 2026 YOUR ORGANIZATION. All rights reserved.
+
         </div>
+
+
 
     </footer>
 
 
+
+
+
     <!-- SLIDER JAVASCRIPT -->
 
+
+
     <script>
-        const slides = document.getElementById("slides");
-        const dotsContainer = document.getElementById("sliderDots");
-        const totalSlides = slides.children.length;
-
         const slider = document.querySelector(".slider");
-
+        const imagePaths = [
+            "images/vyapar pic.jpeg",
+            "images/vyaparpic1.jpeg",
+            "images/vyaparpic3.jpeg"
+        ];
+        const imageAlts = [
+            "MSME Vyapari Vyavasayi Awards",
+            "Awards celebration",
+            "Business awards"
+        ];
+        const leftPanel = document.getElementById("leftPanel");
+        const centerPanel = document.getElementById("centerPanel");
+        const rightPanel = document.getElementById("rightPanel");
+        const dotsContainer = document.getElementById("sliderDots");
         let currentSlide = 0;
         let autoSlide;
 
-        // Create navigation dots
-        for (let i = 0; i < totalSlides; i++) {
-            const dot = document.createElement("button");
+        function wrapIndex(index) {
+            return (index + imagePaths.length) % imagePaths.length;
+        }
 
+        function setPanel(panel, index, altText) {
+            const wrappedIndex = wrapIndex(index);
+            const img = panel.querySelector("img");
+            panel.classList.remove("is-hidden");
+            img.src = imagePaths[wrappedIndex];
+            img.alt = altText || imageAlts[wrappedIndex];
+        }
+
+        function updateSlider() {
+            // Rotate the images through the three positions:
+            // previous image on the left, active image in the center,
+            // and next image on the right. The sequence wraps around.
+            const leftIndex = wrapIndex(currentSlide - 1);
+            const rightIndex = wrapIndex(currentSlide + 1);
+            setPanel(leftPanel, leftIndex, imageAlts[leftIndex]);
+            setPanel(centerPanel, currentSlide, imageAlts[currentSlide]);
+            setPanel(rightPanel, rightIndex, imageAlts[rightIndex]);
+            dotsContainer.querySelectorAll(".dot").forEach((dot, index) => {
+                dot.classList.toggle("active", index === currentSlide);
+            });
+        }
+
+        for (let i = 0; i < imagePaths.length; i++) {
+            const dot = document.createElement("button");
             dot.className = "dot";
             dot.setAttribute("aria-label", "Show banner " + (i + 1));
-
             dot.addEventListener("click", () => {
                 currentSlide = i;
                 updateSlider();
                 restartAutoSlide();
             });
-
             dotsContainer.appendChild(dot);
         }
 
-        function updateSlider() {
-            slides.style.transform =
-                `translateX(-${currentSlide * 100}%)`;
-
-            document.querySelectorAll(".dot").forEach((dot, index) => {
-                dot.classList.toggle(
-                    "active",
-                    index === currentSlide
-                );
-            });
-        }
-
         function moveSlide(direction) {
-            currentSlide =
-                (currentSlide + direction + totalSlides) % totalSlides;
-
+            currentSlide = (currentSlide + direction + imagePaths.length) % imagePaths.length;
             updateSlider();
         }
 
         function startAutoSlide() {
-            autoSlide = setInterval(() => {
-                moveSlide(1);
-            }, 5000);
+            autoSlide = setInterval(() => moveSlide(1), 5000);
         }
 
         function restartAutoSlide() {
@@ -1063,147 +1838,264 @@ header {
             moveSlide(-1);
             restartAutoSlide();
         });
-
         document.getElementById("nextBtn").addEventListener("click", () => {
             moveSlide(1);
             restartAutoSlide();
         });
-
-        // Pause automatic sliding while the user hovers over the banner
-        slider.addEventListener("mouseenter", () => {
-            clearInterval(autoSlide);
-        });
-
-        slider.addEventListener("mouseleave", () => {
-            restartAutoSlide();
-        });
+        slider.addEventListener("mouseenter", () => clearInterval(autoSlide));
+        slider.addEventListener("mouseleave", () => restartAutoSlide());
 
         updateSlider();
         startAutoSlide();
 
         /* ===== FLOATING GOLD PARTICLES ===== */
 
+
+
 const particleCanvas = document.createElement("canvas");
+
 particleCanvas.className = "particle-canvas";
+
 particleCanvas.setAttribute("aria-hidden", "true");
 
-slider.prepend(particleCanvas);
+
+
+centerPanel.prepend(particleCanvas);
+
+
 
 const particleContext = particleCanvas.getContext("2d");
 
+
+
 let particles = [];
+
 let particleWidth = 0;
+
 let particleHeight = 0;
+
 let particleAnimationId;
 
+
+
 const reducedMotion = window.matchMedia(
+
     "(prefers-reduced-motion: reduce)"
+
 ).matches;
 
+
+
 function resizeParticleCanvas() {
-    const rect = slider.getBoundingClientRect();
+
+    const rect = centerPanel.getBoundingClientRect();
+
     const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
 
+
+
     particleWidth = rect.width;
+
     particleHeight = rect.height;
 
+
+
     particleCanvas.width = Math.round(
+
         particleWidth * pixelRatio
+
     );
+
+
 
     particleCanvas.height = Math.round(
+
         particleHeight * pixelRatio
+
     );
+
+
 
     particleContext.setTransform(
+
         pixelRatio, 0, 0, pixelRatio, 0, 0
+
     );
+
+
 
     const particleCount = Math.min(
+
         45,
+
         Math.max(18, Math.round(particleWidth / 18))
+
     );
+
+
 
     particles = Array.from(
+
         { length: particleCount },
+
         () => createParticle(true)
+
     );
+
 }
+
+
 
 function createParticle(randomY = false) {
+
     return {
+
         x: Math.random() * particleWidth,
+
         y: randomY
+
             ? Math.random() * particleHeight
+
             : particleHeight + Math.random() * 20,
+
         radius: Math.random() * 1.8 + 0.6,
+
         speedY: Math.random() * 0.28 + 0.08,
+
         speedX: (Math.random() - 0.5) * 0.18,
+
         opacity: Math.random() * 0.35 + 0.12,
+
         phase: Math.random() * Math.PI * 2,
+
         twinkleSpeed: Math.random() * 0.025 + 0.008
+
     };
+
 }
 
+
+
 function drawParticles() {
+
     particleContext.clearRect(
+
         0, 0, particleWidth, particleHeight
+
     );
 
+
+
     particles.forEach((particle) => {
+
         particle.phase += particle.twinkleSpeed;
 
+
+
         if (!reducedMotion) {
+
             particle.y -= particle.speedY;
+
             particle.x += particle.speedX;
+
         }
 
+
+
         const twinkle =
+
             0.65 + Math.sin(particle.phase) * 0.35;
+
+
 
         const alpha = particle.opacity * twinkle;
 
+
+
         particleContext.beginPath();
 
+
+
         particleContext.arc(
+
             particle.x,
+
             particle.y,
+
             particle.radius,
+
             0,
+
             Math.PI * 2
+
         );
 
+
+
         particleContext.fillStyle =
+
             `rgba(255, 205, 105, ${alpha})`;
 
+
+
         particleContext.shadowBlur = 5;
+
         particleContext.shadowColor =
+
             "rgba(255, 190, 70, 0.35)";
+
+
 
         particleContext.fill();
 
+
+
         particleContext.shadowBlur = 0;
 
+
+
         if (
+
             particle.y < -5 ||
+
             particle.x < -5 ||
+
             particle.x > particleWidth + 5
+
         ) {
+
             Object.assign(particle, createParticle());
+
         }
+
     });
 
+
+
     if (!reducedMotion) {
+
         particleAnimationId =
+
             requestAnimationFrame(drawParticles);
+
     }
+
 }
 
+
+
 resizeParticleCanvas();
+
 drawParticles();
 
+
+
 window.addEventListener("resize", resizeParticleCanvas);
+
     </script>
 
+
+
 </body>
+
 </html>
