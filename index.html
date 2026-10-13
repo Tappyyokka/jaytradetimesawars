@@ -901,41 +901,30 @@ header {
 
 
 
-       @media (max-width: 800px) {
-
-    .slider {
-
-        width: 94%;
-
-        aspect-ratio: 4 / 3;
-
-    }
-
-
-
-    .slide img {
-
-        max-width: 55%;
-
-    }
-
-}
-
 
 
 
 @media (max-width: 500px) {
     .slider {
-        width: 94%;
-        aspect-ratio: 4 / 3;
-        height: 380px !important;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1100 / 1600; /* Reference poster proportions */
+        overflow: hidden;
+    }
+
+    .slide {
+        height: 100%;
     }
 
     .slide img {
-        max-width: 65%;
-        height: 85%;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+        object-position: center;
     }
 }
+
 
 
 
