@@ -1462,6 +1462,64 @@ textarea:focus {
     min-width: 0;
 }
 
+
+/* Slowly rotating gold trophy */
+.countdown-info {
+    position: relative;
+}
+
+.rotating-award {
+    position: absolute;
+    top: 25%;
+    right: 21px;
+    width: 58px;
+    height: 50px;
+    transform: translateY(-50%);
+    perspective: 500px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.rotating-award svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    filter: drop-shadow(0 0 8px rgba(214, 173, 87, 0.25));
+    transform-origin: center;
+    animation: trophySlowRotate 8s linear infinite;
+}
+
+@keyframes trophySlowRotate {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Keep the trophy clear of the title on small screens */
+@media (max-width: 650px) {
+    .rotating-award {
+        width: 42px;
+        height: 54px;
+        right: 0;
+        top: 10px;
+        transform: none;
+    }
+
+    .countdown-info h2 {
+        padding-right: 48px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rotating-award svg {
+        animation: none;
+    }
+}
+
+
 .countdown-eyebrow {
     display: block;
     margin-bottom: 10px;
@@ -1480,19 +1538,17 @@ textarea:focus {
 }
 
 .countdown-date {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin: 13px 0 0;
-    color: #d9dce0;
-    font-size: 11px;
-    letter-spacing: 1.3px;
-    white-space: nowrap;
+    display: block;
+    margin-bottom: 10px;
+    color: #d6ad57;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 7px;
 }
 
 .countdown-date span {
     color: #d6ad57;
-    font-size: 20px;
+    font-size: 10px;
 }
 
 .countdown-panel {
@@ -1605,6 +1661,99 @@ textarea:focus {
         margin-top: 16px;
     }
 }
+
+
+/* Improve readability on mobile devices */
+@media (max-width: 600px) {
+
+    body {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    p,
+    li {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    h1 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    h2 {
+        font-size: 27px;
+        line-height: 1.3;
+    }
+
+    h3 {
+        font-size: 22px;
+        line-height: 1.4;
+    }
+
+    h4 {
+        font-size: 19px;
+    }
+
+    button,
+    .btn,
+    a.button,
+    .nominate-btn {
+        font-size: 16px;
+        padding: 13px 18px;
+    }
+
+    .info-card {
+        padding: 24px 20px;
+    }
+
+    .info-card h3 {
+        font-size: 22px;
+    }
+
+    .info-card p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .countdown-eyebrow {
+        font-size: 11px;
+    }
+
+    .countdown-date {
+        font-size: 12px;
+    }
+
+    .countdown-unit span {
+        font-size: clamp(25px, 7vw, 34px);
+    }
+
+    .countdown-unit small {
+        font-size: 10px;
+    }
+
+    .countdown-footer {
+        font-size: 9px;
+    }
+
+    .footer-content p,
+    .footer-links a {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+    }
+
+    .whatsapp-label {
+        font-size: 12px;
+    }
+}
+
 
 
 
@@ -1993,10 +2142,45 @@ textarea:focus {
     <div class="countdown-info">
         <span class="countdown-eyebrow">THE COUNTDOWN BEGINS</span>
         <h2>VYAPARI VYAVASAYI<br>AWARDS 2026</h2>
+        
+<div class="rotating-award" aria-label="Rotating golden award trophy">
+    <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="trophyGold" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#fff0a8"/>
+                <stop offset="45%" stop-color="#e4b94f"/>
+                <stop offset="100%" stop-color="#9b6a19"/>
+            </linearGradient>
+        </defs>
 
-        <p class="countdown-date">
-            <span>▦</span> NOVEMBER 14, 2026
-        </p>
+        <path d="M30 15 H70 L66 47 Q63 66 50 70 Q37 66 34 47 Z"
+              fill="url(#trophyGold)"/>
+
+        <path d="M30 23 H14 V34 Q14 52 36 54"
+              fill="none" stroke="url(#trophyGold)" stroke-width="7"/>
+
+        <path d="M70 23 H86 V34 Q86 52 64 54"
+              fill="none" stroke="url(#trophyGold)" stroke-width="7"/>
+
+        <path d="M45 69 H55 V88 H45 Z" fill="url(#trophyGold)"/>
+
+        <path d="M35 87 H65 L75 101 H25 Z"
+              fill="url(#trophyGold)"/>
+
+        <path d="M20 103 H80 V112 H20 Z"
+              fill="url(#trophyGold)"/>
+
+        <path d="M50 27 L54 38 L65 38 L56 45 L60 56 L50 49 L40 56 L44 45 L35 38 L46 38 Z"
+              fill="#fff0b8" opacity=".9"/>
+    </svg>
+</div>
+
+        <br>
+        <div class="countdown-date">
+            <span>SUBMIT BEFORE THE COUNTDOWN ENDS</span>
+        </div>
+
+       
     </div>
 
     <div class="countdown-panel">
@@ -2616,7 +2800,7 @@ drawParticles();
 window.addEventListener("resize", resizeParticleCanvas);
 
 
-const eventDate = new Date("2026-11-14T00:00:00+05:30").getTime();
+const eventDate = new Date("2026-10-28T00:00:00+05:30").getTime();
 
 // Progress begins 30 days before the event.
 const countdownStart = eventDate - 30 * 24 * 60 * 60 * 1000;
