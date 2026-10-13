@@ -1663,96 +1663,106 @@ textarea:focus {
 }
 
 
-/* Improve readability on mobile devices */
-@media (max-width: 600px) {
+
+/* MOBILE FONT SIZE FIX */
+@media screen and (max-width: 600px) {
 
     body {
-        font-size: 17px;
-        line-height: 1.7;
+        font-size: 18px !important;
+        line-height: 1.8 !important;
     }
 
-    p,
-    li {
-        font-size: 17px;
-        line-height: 1.7;
-    }
-
+    /* Main headings */
     h1 {
-        font-size: 32px;
-        line-height: 1.2;
+        font-size: 34px !important;
+        line-height: 1.25 !important;
     }
 
     h2 {
-        font-size: 27px;
-        line-height: 1.3;
+        font-size: 29px !important;
+        line-height: 1.35 !important;
     }
 
     h3 {
-        font-size: 22px;
-        line-height: 1.4;
+        font-size: 24px !important;
+        line-height: 1.4 !important;
     }
 
     h4 {
-        font-size: 19px;
+        font-size: 21px !important;
     }
 
-    button,
-    .btn,
-    a.button,
-    .nominate-btn {
-        font-size: 16px;
-        padding: 13px 18px;
+    /* Paragraphs and descriptions */
+    p,
+    li {
+        font-size: 18px !important;
+        line-height: 1.8 !important;
     }
 
+    /* Small section labels */
+    .countdown-eyebrow,
+    .section-label,
+    .eyebrow {
+        font-size: 13px !important;
+        letter-spacing: 2px !important;
+    }
+
+    /* Program cards */
     .info-card {
-        padding: 24px 20px;
+        padding: 26px 22px !important;
     }
 
     .info-card h3 {
-        font-size: 22px;
+        font-size: 23px !important;
     }
 
     .info-card p {
-        font-size: 16px;
-        line-height: 1.7;
+        font-size: 17px !important;
+        line-height: 1.75 !important;
     }
 
-    .countdown-eyebrow {
-        font-size: 11px;
+    /* Countdown */
+    .countdown-info h2 {
+        font-size: 30px !important;
     }
 
     .countdown-date {
-        font-size: 12px;
+        font-size: 13px !important;
     }
 
     .countdown-unit span {
-        font-size: clamp(25px, 7vw, 34px);
+        font-size: 30px !important;
     }
 
     .countdown-unit small {
-        font-size: 10px;
+        font-size: 11px !important;
     }
 
     .countdown-footer {
-        font-size: 9px;
+        font-size: 10px !important;
     }
 
-    .footer-content p,
+    /* Buttons and navigation */
+    button,
+    .nominate-btn,
+    .btn {
+        font-size: 17px !important;
+    }
+
+    nav a,
+    header a {
+        font-size: 16px !important;
+    }
+
+    /* Footer */
+    footer p,
+    footer a,
     .footer-links a {
-        font-size: 15px;
-        line-height: 1.7;
-    }
-
-    input,
-    select,
-    textarea {
-        font-size: 16px;
-    }
-
-    .whatsapp-label {
-        font-size: 12px;
+        font-size: 16px !important;
+        line-height: 1.8 !important;
     }
 }
+
 
 
 
